@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import SearchStyles from '../styles/Search';
+import SearchStyles, {
+  SearchItemTownsStyle,
+  SearchItemHalfFieldStyle,
+  SearchItemAddHotelStyle,
+  SearchItemSearchFlightsStyle,
+} from '../styles/Search';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPlane,
@@ -51,19 +56,35 @@ const SearchItemTowns = ({ towns }) => {
       </ul>
     );
   }
-  return <div className="item-towns">{renderedTowns}</div>;
+  return <SearchItemTownsStyle>{renderedTowns}</SearchItemTownsStyle>;
 };
 
 const SearchItemHalfField = props => {
   return (
-    <div className="item-half-field">
+    <SearchItemHalfFieldStyle>
       <FontAwesomeIcon icon={props.icon} />
       &nbsp;&nbsp;&nbsp;{props.children}
-    </div>
+    </SearchItemHalfFieldStyle>
+  );
+};
+
+const SearchItemAddHotel = props => {
+  return <SearchItemAddHotelStyle>{props.children}</SearchItemAddHotelStyle>;
+};
+
+const SearchItemSearchFlights = props => {
+  return (
+    <SearchItemSearchFlightsStyle>
+      {props.children}
+    </SearchItemSearchFlightsStyle>
   );
 };
 
 const Search = () => {
+  //Mocked data
+  const data = { departure: 'Tbilisi', towns: ['Munich', 'Amsterdam'] };
+  const { departure, towns } = data;
+
   return (
     <SearchStyles>
       <SearchItemTab icon={faPlane} active>
@@ -75,16 +96,16 @@ const Search = () => {
       <SearchItemRoundTrip>One way</SearchItemRoundTrip>
       <SearchItemRoundTrip>Multi-City</SearchItemRoundTrip>
       <SearchItemField icon={faMapMarkerAlt} active>
-        Tbilisi
+        {departure}
       </SearchItemField>
       <SearchItemField icon={faMapMarkerAlt}>To</SearchItemField>
-      <SearchItemTowns towns={['Munich', 'Amsterdam']} />
+      <SearchItemTowns towns={towns} />
       <SearchItemHalfField icon={faCalendarAlt}>Departing</SearchItemHalfField>
       <SearchItemHalfField icon={faCalendarAlt}>Returning</SearchItemHalfField>
       <SearchItemHalfField icon={faUsers}>Adults</SearchItemHalfField>
       <SearchItemHalfField icon={faPlus}>Economy</SearchItemHalfField>
-      <div className="item-add-hotel">Add a Hotel</div>
-      <div className="item-search-flights">Search Flights</div>
+      <SearchItemAddHotel>Add a Hotel</SearchItemAddHotel>
+      <SearchItemSearchFlights>Search Flights</SearchItemSearchFlights>
     </SearchStyles>
   );
 };

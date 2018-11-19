@@ -65,7 +65,6 @@ const SearchStyles = styled.div`
     border-bottom: 1px solid ${inactiveTabColor};
     margin: 0px 30px;
     grid-column: 1 / -1;
-    grid-row: 4;
 
     &.active {
       text-align: left;
@@ -73,47 +72,49 @@ const SearchStyles = styled.div`
       color: white;
       margin: 0px 30px;
       grid-column: 1 / -1;
-      grid-row: 3;
     }
-  }
-
-  .item-towns {
-    grid-column: 1 / -1;
-    grid-row: 5;
-    ul {
-      display: flex;
-      li {
-        background-color: ${inactiveTabColor};
-        list-style-type: none;
-        padding: 15px;
-        margin-right: 10px;
-        border-radius: 30px;
-        font-weight: bold;
-        font-size: 0.6em;
-      }
-    }
-  }
-
-  .item-half-field {
-    color: ${inactiveFieldColor};
-    text-align: left;
-    border-bottom: 1px solid ${inactiveTabColor};
-    margin: 0px 30px;
-    grid-column: span 3;
-  }
-
-  .item-add-hotel {
-    grid-column: 1 / span 2;
-    grid-row: 8;
-  }
-
-  .item-search-flights {
-    background-color: #f07253;
-    padding: 20px 0px;
-    border-radius: 30px;
-    grid-column: 4 / span 2;
-    grid-row: 8;
   }
 `;
 
+const SearchItemTownsStyle = styled.div`
+  grid-column: 1 / -1;
+  ul {
+    display: flex;
+    li {
+      background-color: ${inactiveTabColor};
+      list-style-type: none;
+      padding: 15px;
+      margin-right: 10px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 0.6em;
+    }
+  }
+`;
+
+const SearchItemHalfFieldStyle = styled.div`
+  text-align: left;
+  color: ${inactiveFieldColor};
+  border-bottom: 1px solid ${inactiveTabColor};
+  margin: 0px 30px;
+  grid-column: span 3;
+`;
+
+const SearchItemAddHotelStyle = styled.div`
+  grid-column: span 3;
+`;
+
+const SearchItemSearchFlightsStyle = styled.div`
+  background-color: #f07253;
+  padding: 20px 0px;
+  border-radius: 30px;
+  grid-column: span 3;
+`;
+
 export default SearchStyles;
+export {
+  SearchItemTownsStyle,
+  SearchItemHalfFieldStyle,
+  SearchItemAddHotelStyle,
+  SearchItemSearchFlightsStyle,
+};
