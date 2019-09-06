@@ -1,40 +1,38 @@
-import styled from 'styled-components';
-import VerticalContainer from '../components/VerticalContainer';
-import Search from '../components/Search';
+import styled from "styled-components";
+import VerticalContainer from "../components/VerticalContainer";
+import Search from "../components/Search";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCompass } from "@fortawesome/free-solid-svg-icons";
 
 const Container = styled.div`
-  height: 100vh;
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: white;
   color: black;
-  grid-template-areas: 'left center right';
-  grid-template-columns: 1fr 2fr 2fr;
 
-  div {
-    height: 100%;
+  .left {
+    width: 10%;
   }
-
-  .item1 {
-    grid-area: left;
+  .center {
+    flex: 3;
   }
-  .item2 {
-    grid-area: center;
-  }
-  .item3 {
-    grid-area: right;
+  .right {
+    flex: 3;
   }
 `;
 
 const Index = () => (
-  <div>
-    <Container>
+  <>
+    <Container className="container">
       <div className="left">
         <VerticalContainer>
-          <ul>
-            <li>Facebook</li>
-            <li>Instagram</li>
-          </ul>
-          <p>Travel.</p>
+          <p>Facebook</p>
+          <p>Instagram</p>
+          <p>
+            Travel. &nbsp;&nbsp;
+            <FontAwesomeIcon icon={faCompass} />
+          </p>
         </VerticalContainer>
       </div>
       <div className="center">
@@ -46,12 +44,12 @@ const Index = () => (
       {`
         body {
           margin: 0;
-          @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC');
-          font-family: 'Noto Sans TC', sans-serif;
+          @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC");
+          font-family: "Noto Sans TC", sans-serif;
         }
       `}
     </style>
-  </div>
+  </>
 );
 
 export default Index;

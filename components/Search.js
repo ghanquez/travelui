@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 import SearchStyles, {
   SearchItemTownsStyle,
   SearchItemHalfFieldStyle,
   SearchItemAddHotelStyle,
-  SearchItemSearchFlightsStyle,
-} from '../styles/Search';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+  SearchItemSearchFlightsStyle
+} from "../styles/Search";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlane,
   faHome,
@@ -15,12 +15,12 @@ import {
   faMarker,
   faCalendarAlt,
   faUsers,
-  faPlus,
-} from '@fortawesome/free-solid-svg-icons';
+  faPlus
+} from "@fortawesome/free-solid-svg-icons";
 
 const SearchItemTab = props => {
   return (
-    <div className={`item-tab ${props.active && 'active'}`}>
+    <div className={`item-tab ${props.active && "active"}`}>
       <FontAwesomeIcon icon={props.icon} />
       &nbsp;&nbsp;&nbsp;{props.children}
     </div>
@@ -29,7 +29,7 @@ const SearchItemTab = props => {
 
 const SearchItemRoundTrip = props => {
   return (
-    <div className={`item-roundtrip ${props.active && 'active'}`}>
+    <div className={`item-roundtrip ${props.active && "active"}`}>
       {props.children}
     </div>
   );
@@ -37,7 +37,7 @@ const SearchItemRoundTrip = props => {
 
 const SearchItemField = props => {
   return (
-    <div className={`item-field ${props.active && 'active'}`}>
+    <div className={`item-field ${props.active && "active"}`}>
       <FontAwesomeIcon icon={props.icon} />
       &nbsp;&nbsp;&nbsp;
       {props.children}
@@ -82,7 +82,7 @@ const SearchItemSearchFlights = props => {
 
 const Search = () => {
   //Mocked data
-  const data = { departure: 'Tbilisi', towns: ['Munich', 'Amsterdam'] };
+  const data = { departure: "Tbilisi", towns: ["Munich", "Amsterdam"] };
   const { departure, towns } = data;
 
   return (

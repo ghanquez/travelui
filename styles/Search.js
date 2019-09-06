@@ -1,12 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-const searchBackgroundColor = '#424a8b';
-const searchColor = 'white';
-const inactiveTabColor = '#545c9b';
-const inactiveFieldColor = '#A0A9CB';
-const roundTripButtonColor = '#49BCF7';
-const width = '430px';
-const height = '500px';
+const searchBackgroundColor = "#424a8b";
+const searchColor = "white";
+const inactiveTabColor = "#545c9b";
+const inactiveFieldColor = "#A0A9CB";
+const roundTripButtonColor = "#49BCF7";
+const width = "430px";
+const height = "500px";
 
 const SearchStyles = styled.div`
   display: grid;
@@ -32,11 +32,11 @@ const SearchStyles = styled.div`
   }
 
   .item-tab {
+    height: 100%;
     place-self: center stretch;
     grid-row: 1;
     grid-column: span 2;
     background-color: ${inactiveTabColor};
-    place-self: stretch;
     &.active {
       background-color: ${searchBackgroundColor};
     }
@@ -116,5 +116,5 @@ export {
   SearchItemTownsStyle,
   SearchItemHalfFieldStyle,
   SearchItemAddHotelStyle,
-  SearchItemSearchFlightsStyle,
+  SearchItemSearchFlightsStyle
 };
