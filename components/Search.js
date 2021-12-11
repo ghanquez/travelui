@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import SearchStyles, {
   SearchItemTownsStyle,
   SearchItemHalfFieldStyle,
@@ -12,7 +11,6 @@ import {
   faHome,
   faCarSide,
   faMapMarkerAlt,
-  faMarker,
   faCalendarAlt,
   faUsers,
   faPlus
